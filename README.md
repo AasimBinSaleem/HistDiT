@@ -2,14 +2,14 @@
 
 [![ICPR 2026](https://img.shields.io/badge/ICPR-2026-blue.svg)](#)
 [![arXiv](https://img.shields.io/badge/arXiv-2604.08305-b31b1b.svg)](https://arxiv.org/abs/2604.08305)
-[![PyTorch](https://img.shields.io/badge/PyTorch-Implementation-ee4c2c.svg)](https://pytorch.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-Implementation-ee4c2c.svg)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](#)
 [![RRPR Badge Eligible](https://img.shields.io/badge/IAPR_TC22-RRPR_Badge-gold.svg)](#)
 
 **Official PyTorch implementation of the paper: "HistDiT: A Structure-Aware Latent Conditional Diffusion Model for High-Fidelity Virtual Staining in Histopathology"**
 
-[cite_start]**Authors:** Aasim Bin Saleem, Amr Ahmed, Ardhendu Behera, Hafeezullah Amin, Iman Yi Liao, Mahmoud Khattab, Pan Jia Wern, Haslina Makmur [cite: 3]  
-[cite_start]**Institution:** Edge Hill University & Collaborating Institutions [cite: 4, 5, 6]  
+**Authors:** Aasim Bin Saleem, Amr Ahmed, Ardhendu Behera, Hafeezullah Amin, Iman Yi Liao, Mahmoud Khattab, Pan Jia Wern, Haslina Makmur
+**Institution:** Edge Hill University & Collaborating Institutions 
 **Code Repository:** [https://github.com/AasimBinSaleem/HistDiT](https://github.com/AasimBinSaleem/HistDiT)
 
 ---
