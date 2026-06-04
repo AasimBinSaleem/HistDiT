@@ -60,7 +60,7 @@ HistDiT is evaluated on the public BCI (Breast Cancer Immunohistochemical) datas
 
 [Breast Cancer Immunohistochmeical (BCI) Benchmark](https://bupt-ai-cz.github.io/BCI/)
 
-[Multi-Immunohistochemical Stain Transfer (MIST) Dataset]([https://bupt-ai-cz.github.io/BCI/](https://drive.google.com/drive/folders/146V99Zv1LzoHFYlXvSDhKmflIL-joo6p))
+[Multi-Immunohistochemical Stain Transfer (MIST) Dataset](https://drive.google.com/drive/folders/146V99Zv1LzoHFYlXvSDhKmflIL-joo6p)
 
 Unlike Pix2Pix implementations that require concatenated {A,B} image pairs, HistDiT expects the H&E and IHC images to be in separate directories. Please structure your dataset as follows:Plaintext<root_path>/BCI_dataset/HE/test/00000_test_1+.png
 <root_path>/BCI_dataset/IHC/test/00000_test_1+.png
