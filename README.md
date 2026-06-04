@@ -27,7 +27,7 @@ Immunohistochemistry (IHC) is essential for assessing specific immune biomarkers
 
 ## Method Overview
 
-[HistDiT Architecture](assets/Proposed_DiT_Architecture.png)
+![HistDiT Architecture](Proposed_DiT_Architecture.png)
 
 1. [cite_start]**Latent Encoding:** H&E images are compressed into a spatial latent representation using a frozen AutoencoderKL[cite: 136, 137].
 2. [cite_start]**Semantic Extraction:** A pre-trained foundation model (UNI) extracts robust, patch-level semantic embeddings from the H&E input[cite: 144, 145].
