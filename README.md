@@ -16,20 +16,18 @@
 
 ## Abstract
 
-[cite_start]Immunohistochemistry (IHC) is essential for assessing specific immune biomarkers like Human Epidermal growth-factor Receptor 2 (HER2) in breast cancer[cite: 7]. [cite_start]However, the traditional protocols of obtaining IHC stains are resource-intensive, time-consuming, and prone to structural damages[cite: 8]. [cite_start]Virtual staining has emerged as a scalable alternative, but it faces significant challenges in preserving fine-grained cellular structures while accurately translating biochemical expressions[cite: 9]. [cite_start]Current state-of-the-art methods still rely on Generative Adversarial Networks (GANs) or standard convolutional U-Net diffusion models that often struggle with "structure and staining trade-offs"[cite: 10]. [cite_start]The generated samples are either structurally relevant but blurry, or texturally realistic but have artifacts that compromise their diagnostic use[cite: 11]. 
-
-[cite_start]In this paper, we introduce HistDiT, a novel latent conditional Diffusion Transformer (DiT) architecture that establishes a new benchmark for visual fidelity in virtual histological staining[cite: 12]. [cite_start]The novelty introduced in this work is, a) the Dual-Stream Conditioning strategy that explicitly maintains a balance between spatial constraints via VAE-encoded latents and semantic phenotype guidance via UNI embeddings [cite: 13][cite_start]; b) the multi-objective loss function that contributes to sharper images with clear morphological structure [cite: 14][cite_start]; and c) the use of the Structural Correlation Metric (SCM) to focus on the core morphological structure for precise assessment of sample quality[cite: 15]. [cite_start]Consequently, our model outperforms existing baselines, as demonstrated through rigorous quantitative and qualitative evaluations[cite: 16].
+Immunohistochemistry (IHC) is essential for assessing specific immune biomarkers like Human Epidermal growth-factor Receptor 2 (HER2) in breast cancer. However, the traditional protocols of obtaining IHC stains are resource-intensive, time-consuming, and prone to structural damages. Virtual staining has emerged as a scalable alternative, but it faces significant challenges in preserving fine-grained cellular structures while accurately translating biochemical expressions. Current state-of-the-art methods still rely on Generative Adversarial Networks (GANs) or standard convolutional U-Net diffusion models that often struggle with "structure and staining trade-offs". The generated samples are either structurally relevant but blurry, or texturally realistic but have artifacts that compromise their diagnostic use. Our model outperforms existing baselines, as demonstrated through rigorous quantitative and qualitative evaluations.
 
 ## Key Contributions
 
-* [cite_start]**Dual-Stream Conditioning Strategy:** Explicitly maintains a balance between spatial constraints via VAE-encoded latents and semantic phenotype guidance via UNI Foundation Model embeddings[cite: 13, 140, 144].
-* [cite_start]**Multi-Objective Loss Function:** Combines an auxiliary L1 term with the standard MSE to produce sharper images with clear morphological structures, mitigating the blurring effects caused by imperfect serial section registrations[cite: 14, 43, 44].
-* [cite_start]**Structural Correlation Metric (SCM):** Utilizes SCM to focus purely on the core morphological structure (correlation of variance), effectively correcting the luminance bias inherent in standard SSIM for bright-field microscopy[cite: 15, 45, 46, 202].
-* [cite_start]**State-of-the-Art Performance:** Outperforms existing GAN and diffusion baselines on both the BCI and MIST benchmarks, validated by both quantitative metrics and expert qualitative assessments[cite: 16, 47, 48].
+* **Dual-Stream Conditioning Strategy:** Explicitly maintains a balance between spatial constraints via VAE-encoded latents and semantic phenotype guidance via UNI Foundation Model embeddings.
+* **Multi-Objective Loss Function:** Combines an auxiliary L1 term with the standard MSE to produce sharper images with clear morphological structures, mitigating the blurring effects caused by imperfect serial section registrations.
+* **Structural Correlation Metric (SCM):** Utilizes SCM to focus purely on the core morphological structure (correlation of variance), effectively correcting the luminance bias inherent in standard SSIM for bright-field microscopy.
+* **State-of-the-Art Performance:** Outperforms existing GAN and diffusion baselines on both the BCI and MIST benchmarks, validated by both quantitative metrics and expert qualitative assessments.
 
 ## Method Overview
 
-![HistDiT Architecture](assets/Proposed_DiT_Architecture.png)
+[HistDiT Architecture](assets/Proposed_DiT_Architecture.png)
 
 1. [cite_start]**Latent Encoding:** H&E images are compressed into a spatial latent representation using a frozen AutoencoderKL[cite: 136, 137].
 2. [cite_start]**Semantic Extraction:** A pre-trained foundation model (UNI) extracts robust, patch-level semantic embeddings from the H&E input[cite: 144, 145].
