@@ -9,8 +9,7 @@
 **Official PyTorch implementation of the paper: "HistDiT: A Structure-Aware Latent Conditional Diffusion Model for High-Fidelity Virtual Staining in Histopathology"**
 
 **Authors:** Aasim Bin Saleem, Amr Ahmed, Ardhendu Behera, Hafeezullah Amin, Iman Yi Liao, Mahmoud Khattab, Pan Jia Wern, Haslina Makmur
-**Institution:** Edge Hill University & Collaborating Institutions 
-**Code Repository:** [https://github.com/AasimBinSaleem/HistDiT](https://github.com/AasimBinSaleem/HistDiT)
+**Institution:** Edge Hill University & Collaborating Institutions
 
 ---
 
