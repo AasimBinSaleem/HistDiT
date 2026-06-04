@@ -62,9 +62,14 @@ HistDiT is evaluated on the public BCI (Breast Cancer Immunohistochemical) datas
 
 [Multi-Immunohistochemical Stain Transfer (MIST) Dataset](https://drive.google.com/drive/folders/146V99Zv1LzoHFYlXvSDhKmflIL-joo6p)
 
-Unlike Pix2Pix implementations that require concatenated {A,B} image pairs, HistDiT expects the H&E and IHC images to be in separate directories. Please structure your dataset as follows:Plaintext<root_path>/BCI_dataset/HE/test/00000_test_1+.png
+Unlike PyramidPix2Pix implementation that require concatenated {A,B} image pairs, HistDiT expects the H&E and IHC images to be in separate directories. Please structure your dataset as follows:
+Plaintext<root_path>/BCI_dataset/HE/test/00000_test_1+.png
 <root_path>/BCI_dataset/IHC/test/00000_test_1+.png
-A small subset of images is provided in ./sample_data to allow for immediate testing.Reproducing Results1. Download Pre-trained WeightsDue to file size constraints, the model checkpoints are hosted externally.Download model.ckpt and model_ema.ckpt from: [Insert Google Drive / Zenodo Link Here]Place both files inside the ./weights/ directory.2. Run InferenceThe inference.py script automatically loads the test data, applies the dual-conditioning, generates the virtual stains, and neatly sorts the outputs (Generated, EMA Generated, H&E Ground Truth, and IHC Ground Truth) into the ./test_results directory.Bashpython inference.py
+
+A small subset of images is provided in ./sample_data to allow for immediate testing.
+
+## Reproducing Results
+1. Download Pre-trained WeightsDue to file size constraints, the model checkpoints are hosted externally.Download model.ckpt and model_ema.ckpt from: [Insert Google Drive / Zenodo Link Here]Place both files inside the ./weights/ directory.2. Run InferenceThe inference.py script automatically loads the test data, applies the dual-conditioning, generates the virtual stains, and neatly sorts the outputs (Generated, EMA Generated, H&E Ground Truth, and IHC Ground Truth) into the ./test_results directory.Bashpython inference.py
 3. Evaluate MetricsOnce inference is complete, calculate standard image translation metrics (LPIPS, FID, PSNR, MSE, and MS-SSIM) by running:Bashpython evaluate.py
 Results will be printed to the console and saved in ./test_results/EVALUATION_METRICS.txt.TrainingThe training scripts and full data processing pipelines are currently being packaged for an extended journal submission and will be released in this repository shortly.AcknowledgementsWe thank the authors of the BCI Dataset and the MIST dataset for providing the public histopathology paired images.This codebase utilizes components from the HuggingFace Diffusers library and the timm library.CitationIf you find this code or research useful in your work, please consider citing our paper:Code snippet@misc{saleem2026histdit,
       title={HistDiT: A Structure-Aware Latent Conditional Diffusion Model for High-Fidelity Virtual Staining in Histopathology}, 
