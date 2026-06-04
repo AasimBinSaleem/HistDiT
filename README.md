@@ -29,26 +29,39 @@ Immunohistochemistry (IHC) is essential for assessing specific immune biomarkers
 
 ![HistDiT Architecture](assets/Proposed_HistDiT_Architecture.png)
 
-1. **Latent Encoding:** H&E images are compressed into a spatial latent representation using a frozen AutoencoderKL.
+1. **Latent Encoding:** H&E and IHC images are compressed into a spatial latent representation using a frozen AutoencoderKL.
 2. **Semantic Extraction:** A pre-trained foundation model (UNI) extracts robust, patch-level semantic embeddings from the H&E input.
-3. **Conditioned Generation:** The Diffusion Transformer (HistDiT) iteratively denoises pure Gaussian noise, heavily guided by both the spatial latents (via Cross-Attention) and semantic embeddings (via adaLN).
-4. **Decoding:** The denoised latents are decoded back into the pixel space, yielding the final high-fidelity virtual IHC stain.
+3. **Conditioned Generation:** The Diffusion Transformer (HistDiT) iteratively denoises pure Gaussian noise, guided by both the spatial latents (via Cross-Attention) and semantic embeddings (via adaLN).
+4. **Decoding:** The denoised latents are decoded back into the pixel space, resulting the final high-fidelity virtual IHC stain.
 
 ## Installation
 
 We recommend using Anaconda to manage the environment. The code has been tested with **Python 3.11.13** and **CUDA 12.8**. 
 
 Create and activate the environment:
-bash
+```bash
 conda create -n histdit python=3.11.13 -y
 conda activate histdit
-Install PyTorch and CUDA dependencies:Bashconda install -c nvidia -c pytorch cuda-toolkit=12.8 -y
+```
+Install PyTorch and CUDA dependencies:
+
+```Bash
+conda install -c nvidia -c pytorch cuda-toolkit=12.8 -y
 pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu128](https://download.pytorch.org/whl/cu128)
-Install Mamba and Causal-Conv1d requirements:Bashconda install -c conda-forge git -y
-python -m pip install git+[https://github.com/Dao-AILab/causal-conv1d.git](https://github.com/Dao-AILab/causal-conv1d.git)
-python -m pip install git+[https://github.com/state-spaces/mamba.git](https://github.com/state-spaces/mamba.git)
-Install the remaining dependencies:Bashpip install -r requirements.txt
-(Note: You will also need a valid HuggingFace access token to download the UNI model weights during inference).DatasetsHistDiT is evaluated on the public BCI (Breast Cancer Immunohistochemical) dataset and the MIST dataset.  You can download the BCI dataset from the Official BCI Homepage.Unlike Pix2Pix implementations that require concatenated {A,B} image pairs, HistDiT expects the H&E and IHC images to be in separate directories. Please structure your dataset as follows:Plaintext<root_path>/BCI_dataset/HE/test/00000_test_1+.png
+```
+Install the remaining dependencies:
+```Bash
+pip install -r requirements.txt
+```
+(Note: You will also need a valid HuggingFace access token to download the UNI model weights during inference).
+
+##Datasets
+HistDiT is evaluated on the public BCI (Breast Cancer Immunohistochemical) dataset and the MIST dataset.
+You can access and download the datasets from their official repository:
+![Breast Cancer Immunohistochmeical (BCI) Benchmark](https://bupt-ai-cz.github.io/BCI/)
+![Multi-Immunohistochemical Stain Transfer (MIST) Dataset]([https://bupt-ai-cz.github.io/BCI/](https://drive.google.com/drive/folders/146V99Zv1LzoHFYlXvSDhKmflIL-joo6p))
+
+Unlike Pix2Pix implementations that require concatenated {A,B} image pairs, HistDiT expects the H&E and IHC images to be in separate directories. Please structure your dataset as follows:Plaintext<root_path>/BCI_dataset/HE/test/00000_test_1+.png
 <root_path>/BCI_dataset/IHC/test/00000_test_1+.png
 A small subset of images is provided in ./sample_data to allow for immediate testing.Reproducing Results1. Download Pre-trained WeightsDue to file size constraints, the model checkpoints are hosted externally.Download model.ckpt and model_ema.ckpt from: [Insert Google Drive / Zenodo Link Here]Place both files inside the ./weights/ directory.2. Run InferenceThe inference.py script automatically loads the test data, applies the dual-conditioning, generates the virtual stains, and neatly sorts the outputs (Generated, EMA Generated, H&E Ground Truth, and IHC Ground Truth) into the ./test_results directory.Bashpython inference.py
 3. Evaluate MetricsOnce inference is complete, calculate standard image translation metrics (LPIPS, FID, PSNR, MSE, and MS-SSIM) by running:Bashpython evaluate.py
