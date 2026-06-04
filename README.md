@@ -105,7 +105,7 @@ Results will be printed to the console and saved in ./test_results/EVALUATION_ME
 ## Citation
 If you find this code or research useful in your work, please consider citing our paper:
 ```
-@misc{saleem2026histdit,
+@misc{aasim2026histdit,
       title={HistDiT: A Structure-Aware Latent Conditional Diffusion Model for High-Fidelity Virtual Staining in Histopathology}, 
       author={Aasim Bin Saleem and Amr Ahmed and Ardhendu Behera and Hafeezullah Amin and Iman Yi Liao and Mahmoud Khattab and Pan Jia Wern and Haslina Makmur},
       year={2026},
