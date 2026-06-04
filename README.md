@@ -27,19 +27,19 @@ Immunohistochemistry (IHC) is essential for assessing specific immune biomarkers
 
 ## Method Overview
 
-![HistDiT Architecture](Proposed_DiT_Architecture.png)
+![HistDiT Architecture](assets/Proposed_HistDiT_Architecture.png)
 
-1. [cite_start]**Latent Encoding:** H&E images are compressed into a spatial latent representation using a frozen AutoencoderKL[cite: 136, 137].
-2. [cite_start]**Semantic Extraction:** A pre-trained foundation model (UNI) extracts robust, patch-level semantic embeddings from the H&E input[cite: 144, 145].
-3. [cite_start]**Conditioned Generation:** The Diffusion Transformer (HistDiT) iteratively denoises pure Gaussian noise, heavily guided by both the spatial latents (via Cross-Attention) and semantic embeddings (via adaLN)[cite: 140, 146, 155].
-4. [cite_start]**Decoding:** The denoised latents are decoded back into the pixel space, yielding the final high-fidelity virtual IHC stain[cite: 138].
+1. **Latent Encoding:** H&E images are compressed into a spatial latent representation using a frozen AutoencoderKL.
+2. **Semantic Extraction:** A pre-trained foundation model (UNI) extracts robust, patch-level semantic embeddings from the H&E input.
+3. **Conditioned Generation:** The Diffusion Transformer (HistDiT) iteratively denoises pure Gaussian noise, heavily guided by both the spatial latents (via Cross-Attention) and semantic embeddings (via adaLN).
+4. **Decoding:** The denoised latents are decoded back into the pixel space, yielding the final high-fidelity virtual IHC stain.
 
 ## Installation
 
 We recommend using Anaconda to manage the environment. The code has been tested with **Python 3.11.13** and **CUDA 12.8**. 
 
 Create and activate the environment:
-```bash
+bash
 conda create -n histdit python=3.11.13 -y
 conda activate histdit
 Install PyTorch and CUDA dependencies:Bashconda install -c nvidia -c pytorch cuda-toolkit=12.8 -y
