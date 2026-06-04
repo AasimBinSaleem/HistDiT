@@ -63,7 +63,8 @@ HistDiT is evaluated on the public BCI (Breast Cancer Immunohistochemical) datas
 [Multi-Immunohistochemical Stain Transfer (MIST) Dataset](https://drive.google.com/drive/folders/146V99Zv1LzoHFYlXvSDhKmflIL-joo6p)
 
 Unlike PyramidPix2Pix implementation that require concatenated {A,B} image pairs, HistDiT expects the H&E and IHC images to be in separate directories. Please structure your dataset as follows:
-Plaintext<root_path>/BCI_dataset/HE/test/00000_test_1+.png
+Plaintext
+<root_path>/BCI_dataset/HE/test/00000_test_1+.png
 <root_path>/BCI_dataset/IHC/test/00000_test_1+.png
 
 A small subset of images is provided in ./sample_data to allow for immediate testing.
