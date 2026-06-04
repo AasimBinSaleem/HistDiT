@@ -47,7 +47,7 @@ Install PyTorch and CUDA dependencies:
 
 ```Bash
 conda install -c nvidia -c pytorch cuda-toolkit=12.8 -y
-pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu128](https://download.pytorch.org/whl/cu128)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 ```
 Install the remaining dependencies:
 ```Bash
@@ -55,11 +55,12 @@ pip install -r requirements.txt
 ```
 (Note: You will also need a valid HuggingFace access token to download the UNI model weights during inference).
 
-##Datasets
-HistDiT is evaluated on the public BCI (Breast Cancer Immunohistochemical) dataset and the MIST dataset.
-You can access and download the datasets from their official repository:
-![Breast Cancer Immunohistochmeical (BCI) Benchmark](https://bupt-ai-cz.github.io/BCI/)
-![Multi-Immunohistochemical Stain Transfer (MIST) Dataset]([https://bupt-ai-cz.github.io/BCI/](https://drive.google.com/drive/folders/146V99Zv1LzoHFYlXvSDhKmflIL-joo6p))
+## Datasets
+HistDiT is evaluated on the public BCI (Breast Cancer Immunohistochemical) dataset and the MIST dataset. You can access and download the datasets from their official repository:
+
+[Breast Cancer Immunohistochmeical (BCI) Benchmark](https://bupt-ai-cz.github.io/BCI/)
+
+[Multi-Immunohistochemical Stain Transfer (MIST) Dataset]([https://bupt-ai-cz.github.io/BCI/](https://drive.google.com/drive/folders/146V99Zv1LzoHFYlXvSDhKmflIL-joo6p))
 
 Unlike Pix2Pix implementations that require concatenated {A,B} image pairs, HistDiT expects the H&E and IHC images to be in separate directories. Please structure your dataset as follows:Plaintext<root_path>/BCI_dataset/HE/test/00000_test_1+.png
 <root_path>/BCI_dataset/IHC/test/00000_test_1+.png
