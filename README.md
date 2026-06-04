@@ -67,15 +67,15 @@ Unlike PyramidPix2Pix implementation that require concatenated {A,B} image pairs
   ```
   HistDiT
     ├──BCI_dataset
-         ├── IHC
-               ├──train
-               |    ├── 00000_train_1+.png
-               |    ├── 00001_train_3+.png
-               |    └── ...
-               └──test
-                    ├── 00000_test_1+.png
-                    ├── 00001_test_2+.png
-                    └── ...
+    |    ├── IHC
+    |          ├──train
+    |          |    ├── 00000_train_1+.png
+    |          |    ├── 00001_train_3+.png
+    |          |    └── ...
+    |          └──test
+    |               ├── 00000_test_1+.png
+    |               ├── 00001_test_2+.png
+    |               └── ...
     ├──MIST_dataset
          ├── HER2
                ├──train
