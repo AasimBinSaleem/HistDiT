@@ -1,0 +1,13 @@
+pandas
+matplotlib
+tensorboard
+pytorch_msssim
+diffusers 
+transformers
+accelerate 
+hf_xet
+timm==1.0.21
+peft
+scikit-image
+clean-fid
+lpips
