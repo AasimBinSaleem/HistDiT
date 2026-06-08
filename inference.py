@@ -1,27 +1,30 @@
 import os
+import copy
+import timm
 import torch
 import logging
-import timm
-import torchvision
 import numpy as np
 from tqdm import tqdm
 from PIL import Image
-from diffusers import DDPMScheduler, AutoencoderKL
-from timm.layers import SwiGLUPacked
-from timm.data import resolve_data_config
-from timm.data.transforms_factory import create_transform
-import torchvision.transforms.v2 as TF
-from torch.utils.data import DataLoader
+from models.utils import *
 from dataset import bcidatasets
+from torchvision import transforms
+from models.utils import pil_loader
+from timm.layers import SwiGLUPacked
+import torchvision.transforms.v2 as TF
+from timm.data import resolve_data_config
+from diffusers import DDPMScheduler, AutoencoderKL
+from timm.data.transforms_factory import create_transform
 
 # Custom modules (Ensure these are in your models/ directory)
 from models.backbone import HistoDiT
 from models.utils import save_single_image, count_parameters
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s: %(message)s", level=logging.INFO, datefmt="%I:%M:%S")
+
 # Note: Users will need their own HuggingFace token to access the UNI model.
-# from huggingface_hub import login
-# login(token="YOUR_HF_TOKEN") 
+from huggingface_hub import login
+login(token="YOUR_HF_TOKEN")
 
 def sample_images(model, c_spatial, c_semantic, device, noise_scheduler, cfg_scale, strength):
     logging.info(f"Sampling {c_spatial.shape[0]} new images with strength={strength}")
@@ -59,7 +62,7 @@ def get_test_data(args):
         num_pairs=args.num_pairs, 
         transforms=transforms
     )
-    dataloader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False, num_workers=min(4, os.cpu_count()), pin_memory=False, drop_last=False)
+    dataloader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False, num_workers=min(0, os.cpu_count()), pin_memory=False, drop_last=False)
     return dataloader
 
 def test(args):
@@ -116,10 +119,14 @@ def test(args):
     ema_model = copy.deepcopy(model).to(device)
    
     logging.info('Loading model weights...')
-    model.load_state_dict(torch.load(args.model_dir, map_location=device))
-    ema_model.load_state_dict(torch.load(args.EMA_model_dir, map_location=device))
+    model.load_state_dict(torch.load(args.model_dir, map_location=device, weights_only=True))
+    ema_model.load_state_dict(torch.load(args.EMA_model_dir, map_location=device, weights_only=True))
+    # Calculate and print parameters
+    param_summary = count_parameters(model)
+    print(f"\n[HistDiT] {param_summary}")
     
     dataloader = get_test_data(args)
+    
     pbar = tqdm(dataloader)
     
     for i, (gt_IHC_images, cond_test_HE_images, filenames) in enumerate(pbar):
@@ -142,27 +149,27 @@ def test(args):
         for j in range(sampled_images.size(0)):
             base = str(filenames[j])
             # Save properly sorted into their respective folders
-            save_single_image(sampled_images[j], os.path.join(dir_normal, f"{base}.png"))
-            save_single_image(ema_sampled_images[j], os.path.join(dir_ema, f"{base}.png"))
-            save_single_image(gt_IHC_images[j], os.path.join(dir_ihc, f"{base}.png"))
-            save_single_image(cond_test_HE_images[j], os.path.join(dir_he, f"{base}.png"))
+            save_single_image(sampled_images[j], os.path.join(dir_normal, base))
+            save_single_image(ema_sampled_images[j], os.path.join(dir_ema, base))
+            save_single_image(gt_IHC_images[j], os.path.join(dir_ihc, base))
+            save_single_image(cond_test_HE_images[j], os.path.join(dir_he, base))
 
 def launch():
     class Args:
         # Standardized to point to the sample data by default for reviewers
         x_image_dir_path = './sample_data/HE'
         y_image_dir_path = './sample_data/IHC'
-        output_dir = './test_results'
-        num_pairs  = 10 # Adjust to match your sample size
-        batch_size = 4
+        output_dir = './test_results_NEW'
+        num_pairs  = 8 # Adjust to match your sample size (For BCI it 977 and for MIST it is 1000)
+        batch_size = 8
         image_size = 512
         latent_scale = 0.18285
         guidance = 3
         strength = 1
         
         # Standardized Model Names
-        model_dir  = "./weights/model.ckpt"
-        EMA_model_dir = "./weights/model_ema.ckpt"
+        model_dir  = './weights/model.pt'
+        EMA_model_dir = './weights/model_ema.pt'
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     args = Args()
