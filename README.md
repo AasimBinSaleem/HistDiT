@@ -45,12 +45,12 @@ conda activate histdit
 ```
 Install PyTorch and CUDA dependencies:
 
-```
+```bash
 conda install -c nvidia -c pytorch cuda-toolkit=12.8 -y
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 ```
 Install the remaining dependencies:
-```
+```bash
 pip install -r requirements.txt
 ```
 (Note: You will also need a valid HuggingFace access token to download the UNI model weights during inference).
@@ -104,14 +104,14 @@ Unlike PyramidPix2Pix implementation that require concatenated {A,B} image pairs
    
 3. Run Inference
    The inference.py script automatically loads the test data, applies the dual-conditioning, generates the virtual stains, and neatly sorts the outputs (Generated, EMA Generated, H&E Ground Truth, and IHC Ground Truth) into the ./test_results directory.
-   ```
+   ```bash
    python inference.py
    ```
    (Note: You will also need to insert a valid HuggingFace access token to use the UNI model weights during inference).
 
 4. Evaluate Metrics
    Once inference is complete, calculate standard image translation metrics (LPIPS, FID, PSNR, MSE, and MS-SSIM) by running:
-   ```
+   ```bash
    python evaluate.py
    ```
    Results will be printed to the console and saved in ./test_results/EVALUATION_METRICS.txt.
