@@ -57,9 +57,9 @@ pip install -r requirements.txt
 Direct Pip Installation (For Pre-configured Clusters like RunAI)
 If you are running on a managed cluster environment where Python and CUDA drivers are already set up at the system level, you can install the dependencies directly:
 
-```Bash
+```bash
 pip uninstall -y torch torchvision torchaudio
-pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu128](https://download.pytorch.org/whl/cu128)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 pip install -r requirements.txt
 ```
 (Note: You will also need a valid HuggingFace access token to download the UNI model weights during inference).
