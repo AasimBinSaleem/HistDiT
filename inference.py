@@ -7,7 +7,8 @@ import numpy as np
 from tqdm import tqdm
 from PIL import Image
 from models.utils import *
-from dataset import bcidatasets
+#from dataset import bcidatasets
+from dataset import mistdatasets
 from torchvision import transforms
 from models.utils import pil_loader
 from timm.layers import SwiGLUPacked
@@ -56,13 +57,10 @@ def get_test_data(args):
         torchvision.transforms.ToTensor(),
         torchvision.transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
-    dataset = bcidatasets.BCIDataset(
-        x_img_dir=args.x_image_dir_path, 
-        y_img_dir=args.y_image_dir_path,
-        num_pairs=args.num_pairs, 
-        transforms=transforms
-    )
-    dataloader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False, num_workers=min(0, os.cpu_count()), pin_memory=False, drop_last=False)
+    #dataset = bcidatasets.BCIDataset(x_img_dir=args.x_image_dir_path, y_img_dir=args.y_image_dir_path, num_pairs=args.num_pairs, transforms=transforms)
+    dataset = mistdatasets.MISTDataset(x_img_dir=args.x_image_dir_path, y_img_dir=args.y_image_dir_path, num_pairs=args.num_pairs, transforms=transforms)
+    
+    dataloader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False, num_workers=min(4, os.cpu_count()), pin_memory=False, drop_last=False)
     return dataloader
 
 def test(args):
