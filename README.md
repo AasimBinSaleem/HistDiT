@@ -56,7 +56,7 @@ pip install -r requirements.txt
 (Note: You will also need a valid HuggingFace access token to download the UNI model weights during inference).
 
 ## Datasets
-HistDiT is evaluated on the public BCI (Breast Cancer Immunohistochemical) dataset and the MIST dataset. You can access and download the datasets from their official repository:
+HistDiT is evaluated on the public BCI benchmark and the MIST dataset. You can access and download the datasets from their official repository:
 
 [Breast Cancer Immunohistochmeical (BCI) Benchmark](https://bupt-ai-cz.github.io/BCI/)
 
@@ -99,7 +99,8 @@ Unlike PyramidPix2Pix implementation that require concatenated {A,B} image pairs
 A small subset of images is provided in ./sample_data to allow for immediate testing.
 
 ## Reproducing Results
-1. Download Pre-trained WeightsDue to file size constraints, the model checkpoints are hosted externally.Download model.ckpt and model_ema.ckpt from: [Insert Google Drive / Zenodo Link Here]Place both files inside the ./weights/ directory.2. Run InferenceThe inference.py script automatically loads the test data, applies the dual-conditioning, generates the virtual stains, and neatly sorts the outputs (Generated, EMA Generated, H&E Ground Truth, and IHC Ground Truth) into the ./test_results directory.Bashpython inference.py
+1. Download Pre-trained Weights
+   Due to file size constraints, the model checkpoints are hosted externally. Download model.ckpt and model_ema.ckpt from: [Insert Google Drive / Zenodo Link Here]Place both files inside the ./weights/ directory.2. Run InferenceThe inference.py script automatically loads the test data, applies the dual-conditioning, generates the virtual stains, and neatly sorts the outputs (Generated, EMA Generated, H&E Ground Truth, and IHC Ground Truth) into the ./test_results directory.Bashpython inference.py
 3. Evaluate MetricsOnce inference is complete, calculate standard image translation metrics (LPIPS, FID, PSNR, MSE, and MS-SSIM) by running:Bashpython evaluate.py
 Results will be printed to the console and saved in ./test_results/EVALUATION_METRICS.txt.TrainingThe training scripts and full data processing pipelines are currently being packaged for an extended journal submission and will be released in this repository shortly.AcknowledgementsWe thank the authors of the BCI Dataset and the MIST dataset for providing the public histopathology paired images.This codebase utilizes components from the HuggingFace Diffusers library and the timm library.
 ## Citation
