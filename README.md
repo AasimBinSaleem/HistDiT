@@ -54,8 +54,7 @@ Install the remaining dependencies:
 pip install -r requirements.txt
 ```
 
-Direct Pip Installation (For Pre-configured Clusters like RunAI)
-If you are running on a managed cluster environment where Python and CUDA drivers are already set up at the system level, you can install the dependencies directly:
+Direct Pip Installation (For Pre-configured Clusters like RunAI):
 
 ```bash
 pip uninstall -y torch torchvision torchaudio
