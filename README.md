@@ -54,7 +54,7 @@ Install the remaining dependencies:
 pip install -r requirements.txt
 ```
 
-# Method 2: Direct Pip Installation (For Pre-configured Clusters like RunAI)
+Direct Pip Installation (For Pre-configured Clusters like RunAI)
 If you are running on a managed cluster environment where Python and CUDA drivers are already set up at the system level, you can install the dependencies directly:
 
 ```Bash
