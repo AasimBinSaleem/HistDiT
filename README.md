@@ -95,8 +95,7 @@ Unlike PyramidPix2Pix implementation that require concatenated {A,B} image pairs
                          ├── 15M2102762_21_24.jpg
                          └── ...
   ```
-  
-A small subset of images is provided in ./sample_data to allow for immediate testing.
+  A small subset of images is provided in ./sample_data to allow for immediate testing.
 
 ## Reproducing Results
 1. Download Pre-trained Weights
@@ -108,7 +107,7 @@ A small subset of images is provided in ./sample_data to allow for immediate tes
    ```
    python inference.py
    ```
-(Note: You will also need to insert a valid HuggingFace access token to use the UNI model weights during inference).
+   (Note: You will also need to insert a valid HuggingFace access token to use the UNI model weights during inference).
 
 4. Evaluate Metrics
    Once inference is complete, calculate standard image translation metrics (LPIPS, FID, PSNR, MSE, and MS-SSIM) by running:
