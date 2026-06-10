@@ -136,7 +136,7 @@ HistDiT establishes a new state-of-the-art for virtual IHC staining across two m
 
 | Dataset | MSE (↓) | PSNR(dB) (↑) | SSIM (↑) | SCM (↑) | LPIPS (↓) | FID (↓) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **BCI Benchmark** | 891.53 | 21.43 | 0.4769 | 0.540 | 0.412 | 49.15 |
+| **BCI Benchmark** | 891.53 | 21.43 | 0.477 | 0.540 | 0.412 | 49.15 |
 | **MIST Dataset** | 3396.88 | 14.26 | 0.211 | 0.302 | 0.489 | 59.30 |
 
 *(For full performance breakdowns, baseline comparisons, and level-wise HER2 expression analysis, please refer to the main paper.)*
