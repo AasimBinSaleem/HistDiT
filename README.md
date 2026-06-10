@@ -54,7 +54,7 @@ Install the remaining dependencies:
 pip install -r requirements.txt
 ```
 
-Direct Pip Installation (For Pre-configured Clusters like RunAI):
+### Direct Pip Installation (For Pre-configured Clusters like RunAI):
 
 ```bash
 pip uninstall -y torch torchvision torchaudio
