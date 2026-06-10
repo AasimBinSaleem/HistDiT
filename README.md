@@ -107,8 +107,9 @@ Unlike PyramidPix2Pix implementation that require concatenated {A,B} image pairs
 
 ## Reproducing Results
 1. Download Pre-trained Weights
-   Due to file size constraints, the model checkpoints are hosted externally. Download model.ckpt and model_ema.ckpt from [Trained Model Weights](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=sharing).
-   Place both files inside the ./weights/ directory.
+   Due to file size constraints, the model checkpoints are hosted externally. Download model.ckpt and model_ema.ckpt from [Trained on BCI](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link) and [Trained on MIST](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link).
+   
+   Place both model files inside the ./weights/ directory.
    
 3. Run Inference
    The inference.py script automatically loads the test data, applies the dual-conditioning, generates the virtual stains, and neatly sorts the outputs (Generated, EMA Generated, H&E Ground Truth, and IHC Ground Truth) into the ./test_results directory.
