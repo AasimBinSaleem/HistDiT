@@ -140,18 +140,8 @@ HistDiT establishes a new state-of-the-art for virtual IHC staining across two m
 *(For full performance breakdowns, baseline comparisons, and level-wise HER2 expression analysis, please refer to the main paper.)*
 
 ### Visual Results
-
-#### BCI Dataset (HER2 Expression Levels 0 to 3+)
-![BCI Results](assets/BCI_results.png)
-*Qualitative comparison on the BCI Dataset. HistDiT demonstrates higher fidelity and accurate stain intensity, particularly in high-grade regions (2+, 3+).*
-
-#### MIST Dataset
-![MIST Results](assets/MIST_results.png)
+![MIST Results](assets/Visual Results (MIST).png)
 *Visual comparison on the MIST dataset. HistDiT successfully restores complex staining patterns and sharp morphological details even under unconstrained conditions.*
-
-#### Ablation on Objective Functions
-![Ablation Results](assets/Ablation_results.jpg)
-*Visual samples demonstrating that our combined hybrid objective (MSE + L1) produces sharper cellular structures compared to the smoothing artifacts seen when using MSE alone.*
 
 ## Acknowledgements
 We thank the authors of the BCI Dataset and the MIST dataset for providing the public histopathology paired images. The code utilizes components from the HuggingFace Diffusers library and the timm library.
