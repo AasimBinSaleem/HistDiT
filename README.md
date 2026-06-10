@@ -132,10 +132,10 @@ HistDiT establishes a new state-of-the-art for virtual IHC staining across two m
 
 ### Quantitative Results
 
-| Dataset | MSE (↓) | PSNR(dB) (↑) | SSIM (↑) | SCM (↑) | LPIPS (↓) | FID (↓) | Model Checkpoints |
+| Dataset | MSE (↓) | PSNR(dB) (↑) | SSIM (↑) | SCM (↑) | LPIPS (↓) | FID (↓) | Checkpoints |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **BCI Benchmark** | 891.53 | 21.43 | 0.477 | 0.540 | 0.412 | 49.15 | [Trained on BCI](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link) |
-| **MIST Dataset** | 3396.88 | 14.26 | 0.211 | 0.302 | 0.489 | 59.30 | [Trained on MIST](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link) |
+| **BCI Dataset** | 891.53 | 21.43 | 0.477 | 0.540 | 0.412 | 49.15 | [Trained on BCI](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link) |
+| **MIST Dataset** | 339.88 | 14.26 | 0.211 | 0.302 | 0.489 | 59.30 | [Trained on MIST](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link) |
 
 *(For full performance breakdowns, baseline comparisons, and level-wise HER2 expression analysis, please refer to the main paper.)*
 
