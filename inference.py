@@ -155,8 +155,8 @@ def test(args):
 def launch():
     class Args:
         # Standardized to point to the sample data by default for reviewers
-        x_image_dir_path = './sample_data/HE'
-        y_image_dir_path = './sample_data/IHC'
+        x_image_dir_path = './sample_data/MIST_Dataset/HE'
+        y_image_dir_path = './sample_data/MIST_Dataset/IHC'
         output_dir = './test_results_NEW'
         num_pairs  = 8 # Adjust to match your sample size (For BCI it 977 and for MIST it is 1000)
         batch_size = 8
@@ -166,8 +166,8 @@ def launch():
         strength = 1
         
         # Standardized Model Names
-        model_dir  = './weights/model.pt'
-        EMA_model_dir = './weights/model_ema.pt'
+        model_dir  = './weights/model_mist.pt'
+        EMA_model_dir = './weights/model_ema_mist.pt'
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     args = Args()
