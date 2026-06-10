@@ -107,9 +107,7 @@ Unlike PyramidPix2Pix implementation that require concatenated {A,B} image pairs
 
 ## Reproducing Results
 1. Download Pre-trained Weights
-   Due to file size constraints, the model checkpoints are hosted externally. Download both model.pt and model_ema.pt from [Trained on BCI](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link) and [Trained on MIST](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link).
-   
-   Place both model files inside the ./weights/ directory.
+   Due to file size constraints, the model checkpoints are hosted externally. Download both model.pt and model_ema.pt from [Trained on BCI](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link) and [Trained on MIST](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link). Place both model files inside the ./weights/ directory.
    
 3. Run Inference
    The inference.py script automatically loads the test data, applies the dual-conditioning, generates the virtual stains, and neatly sorts the outputs (Generated, EMA Generated, H&E Ground Truth, and IHC Ground Truth) into the ./test_results directory.
@@ -134,10 +132,10 @@ HistDiT establishes a new state-of-the-art for virtual IHC staining across two m
 
 ### Quantitative Results
 
-| Dataset | MSE (↓) | PSNR(dB) (↑) | SSIM (↑) | SCM (↑) | LPIPS (↓) | FID (↓) |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **BCI Benchmark** | 891.53 | 21.43 | 0.477 | 0.540 | 0.412 | 49.15 |
-| **MIST Dataset** | 3396.88 | 14.26 | 0.211 | 0.302 | 0.489 | 59.30 |
+| Dataset | MSE (↓) | PSNR(dB) (↑) | SSIM (↑) | SCM (↑) | LPIPS (↓) | FID (↓) | Model Checkpoints |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **BCI Benchmark** | 891.53 | 21.43 | 0.477 | 0.540 | 0.412 | 49.15 | [Trained on BCI](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link) |
+| **MIST Dataset** | 3396.88 | 14.26 | 0.211 | 0.302 | 0.489 | 59.30 | [Trained on MIST](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link) |
 
 *(For full performance breakdowns, baseline comparisons, and level-wise HER2 expression analysis, please refer to the main paper.)*
 
