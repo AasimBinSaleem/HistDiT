@@ -141,7 +141,7 @@ HistDiT establishes a new state-of-the-art for virtual IHC staining across two m
 
 ### Visual Results
 ![MIST Results](assets/Visual_Results_(MIST).jpg)
-*Visual comparison on the MIST dataset. HistDiT successfully restores complex staining patterns and sharp morphological details even under unconstrained conditions.*
+*Visual comparison on the MIST dataset. HistDiT successfully restores complex staining patterns and sharp morphological details.*
 
 ## Acknowledgements
 We thank the authors of the BCI Dataset and the MIST dataset for providing the public histopathology paired images. The code utilizes components from the HuggingFace Diffusers library and the timm library.
