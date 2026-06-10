@@ -140,7 +140,7 @@ HistDiT establishes a new state-of-the-art for virtual IHC staining across two m
 *(For full performance breakdowns, baseline comparisons, and level-wise HER2 expression analysis, please refer to the main paper.)*
 
 ### Visual Results
-![MIST Results](assets/Visual Results (MIST).png)
+![MIST Results](assets/Visual_Results_(MIST).jpg)
 *Visual comparison on the MIST dataset. HistDiT successfully restores complex staining patterns and sharp morphological details even under unconstrained conditions.*
 
 ## Acknowledgements
