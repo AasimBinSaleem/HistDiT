@@ -128,6 +128,33 @@ Unlike PyramidPix2Pix implementation that require concatenated {A,B} image pairs
 ## Training
 The training scripts and full data processing pipelines are currently being packaged for an extended journal submission and will be released in this repository shortly.
 
+## Results Snapshot
+
+HistDiT establishes a new state-of-the-art for virtual IHC staining across two major histopathology benchmarks: the BCI dataset and the MIST dataset.
+
+### Quantitative Results
+
+| Dataset | MSE (↓) | PSNR(dB) (↑) | SSIM (↑) | SCM (↑) | LPIPS (↓) | FID (↓) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **BCI Benchmark** | 891.53 | 21.43 | 0.4769 | 0.540 | 0.412 | 49.15 |
+| **MIST Dataset** | 3396.88 | 14.26 | 0.211 | 0.302 | 0.489 | 59.30 |
+
+*(For full performance breakdowns, baseline comparisons, and level-wise HER2 expression analysis, please refer to the main paper.)*
+
+### Visual Results
+
+#### BCI Dataset (HER2 Expression Levels 0 to 3+)
+![BCI Results](assets/BCI_results.png)
+*Qualitative comparison on the BCI Dataset. HistDiT demonstrates higher fidelity and accurate stain intensity, particularly in high-grade regions (2+, 3+).*
+
+#### MIST Dataset
+![MIST Results](assets/MIST_results.png)
+*Visual comparison on the MIST dataset. HistDiT successfully restores complex staining patterns and sharp morphological details even under unconstrained conditions.*
+
+#### Ablation on Objective Functions
+![Ablation Results](assets/Ablation_results.jpg)
+*Visual samples demonstrating that our combined hybrid objective (MSE + L1) produces sharper cellular structures compared to the smoothing artifacts seen when using MSE alone.*
+
 ## Acknowledgements
 We thank the authors of the BCI Dataset and the MIST dataset for providing the public histopathology paired images. The code utilizes components from the HuggingFace Diffusers library and the timm library.
 
