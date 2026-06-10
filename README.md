@@ -107,7 +107,7 @@ Unlike PyramidPix2Pix implementation that require concatenated {A,B} image pairs
 
 ## Reproducing Results
 1. Download Pre-trained Weights
-   Due to file size constraints, the model checkpoints are hosted externally. Download model.ckpt and model_ema.ckpt from [Trained on BCI](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link) and [Trained on MIST](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link).
+   Due to file size constraints, the model checkpoints are hosted externally. Download both model.pt and model_ema.pt from [Trained on BCI](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link) and [Trained on MIST](https://drive.google.com/drive/folders/1KDbXsPQOXL9m44YjLWuNZLaiU-9-l91G?usp=drive_link).
    
    Place both model files inside the ./weights/ directory.
    
