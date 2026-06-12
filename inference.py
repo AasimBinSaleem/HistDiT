@@ -157,7 +157,7 @@ def launch():
         # Standardized to point to the sample data by default for reviewers
         x_image_dir_path = './sample_data/MIST_Dataset/HE'
         y_image_dir_path = './sample_data/MIST_Dataset/IHC'
-        output_dir = './test_results_NEW'
+        output_dir = './test_results'
         num_pairs  = 8 # Adjust to match your sample size (For BCI it 977 and for MIST it is 1000)
         batch_size = 8
         image_size = 512
