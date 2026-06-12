@@ -61,12 +61,12 @@ def evaluate_images(gt_dir, generated_dir, result_file):
     fid_score = fid.compute_fid(gt_dir, generated_dir, mode="clean", device=device, num_workers=0)
     
     print(f"\nEvaluation Complete! Results saved in: {result_file}")
-    print(f"Average MSE: {np.mean(mse_list):.2f} (Lower is better)")
-    print(f"Average PSNR: {np.mean(psnr_list):.2f}")
-    print(f"Average Ms-SSIM: {np.mean(ms_ssim_list):.4f}")
+    print(f"MSE: {np.mean(mse_list):.2f} (Lower is better)")
+    print(f"PSNR: {np.mean(psnr_list):.2f}")
+    print(f"Ms-SSIM: {np.mean(ms_ssim_list):.4f}")
     print(f"SCM: {np.mean(scm_list):.4f}")
-    print(f"Average LPIPS: {np.mean(lpips_list):.4f} (Lower is better)")
-    print(f"FID Score: {fid_score:.2f} (Lower is better)")
+    print(f"LPIPS: {np.mean(lpips_list):.4f} (Lower is better)")
+    print(f"FID: {fid_score:.2f} (Lower is better)")
 
 if __name__ == "__main__":
     gt_dir = './test_results/IHC_GT'
