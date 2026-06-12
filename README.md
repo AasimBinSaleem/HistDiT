@@ -124,7 +124,7 @@ Unlike PyramidPix2Pix implementation that require concatenated {A,B} image pairs
    Results will be printed to the console and saved in ./test_results/EVALUATION_METRICS.txt.
 
 ## Training
-The training scripts and full data processing pipelines are currently being packaged for an extended journal submission and will be released in this repository shortly.
+The training script will shortly be released in this repository.
 
 ## Results Snapshot
 
