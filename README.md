@@ -35,7 +35,9 @@ Immunohistochemistry (IHC) is essential for assessing specific immune biomarkers
 4. **Decoding:** The denoised latents are decoded back into the pixel space, resulting the final high-fidelity virtual IHC stain.
 
 ## Installation
-
+```bash
+git clone https://github.com/AasimBinSaleem/HistDiT.git
+```
 We recommend using Anaconda to manage the environment. The code has been tested with **Python 3.11.13** and **CUDA 12.8**. 
 
 Create and activate the environment:
