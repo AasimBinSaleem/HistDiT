@@ -151,12 +151,15 @@ We thank the authors of the BCI Dataset and the MIST dataset for providing the p
 ## Citation
 If you find this code or research useful in your work, please consider citing our paper:
 ```
-@misc{aasim2026histdit,
-      title={HistDiT: A Structure-Aware Latent Conditional Diffusion Model for High-Fidelity Virtual Staining in Histopathology}, 
-      author={Aasim Bin Saleem and Amr Ahmed and Ardhendu Behera and Hafeezullah Amin and Iman Yi Liao and Mahmoud Khattab and Pan Jia Wern and Haslina Makmur},
-      year={2026},
-      eprint={2604.08305},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV}
+@inproceedings{aasim2026histdit,
+  title={HistDiT: A Structure-Aware Latent Conditional Diffusion Model for High-Fidelity Virtual Staining in Histopathology},
+  author={Aasim Bin Saleem and Amr Ahmed and Ardhendu Behera and Hafeezullah Amin and Iman Yi Liao and Mahmoud Khattab and Pan Jia Wern and Haslina Makmur},
+  booktitle={Pattern Recognition: 28th International Conference, ICPR 2026, Lyon, France, August 17--22, 2026, Proceedings, Part XIII},
+  series={Lecture Notes in Computer Science},
+  volume={16824},
+  pages={416--431},
+  year={2026},
+  publisher={Springer},
+  isbn={978-3-032-31927-2}
 }
 ```
