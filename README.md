@@ -4,7 +4,8 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2604.08305-b31b1b.svg)](https://arxiv.org/abs/2604.08305)
 [![PyTorch](https://img.shields.io/badge/PyTorch-Implementation-ee4c2c.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](#)
-[![RRPR Badge Eligible](https://img.shields.io/badge/IAPR_TC22-RRPR_Badge-gold.svg)](#)
+[![RRPR Badge Eligible](https://img.shields.io/badge/IAPR_TC22-RRPR_Badge-gold.svg)](https://iapr-tc22-rrl.github.io/icpr2026/results)
+[![Best Industry Paper Award](https://img.shields.io/badge/Award-Best_Industry_Paper-FFD700.svg)](https://iapr.org/awards/icpr-awards/best-industry-related-paper-award)
 
 **Official PyTorch implementation of the paper: "HistDiT: A Structure-Aware Latent Conditional Diffusion Model for High-Fidelity Virtual Staining in Histopathology"**
 
